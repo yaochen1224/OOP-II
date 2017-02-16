@@ -1,0 +1,7 @@
+#Wed Feb 15 20:36:11 EST 2017
+base.0=/Users/YaoChen/Documents/Github/OOP-II/Week04/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_24cf992ae4c507bb2745651ef38e217d9acdf0cc
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/YaoChen/Documents/Github/OOP-II/Week04/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_39547865d743131f99f05b4c13558d48342a0f5b/classes.dex
+base.1=/Users/YaoChen/Documents/Github/OOP-II/Week04/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_39547865d743131f99f05b4c13558d48342a0f5b
+file.0=/Users/YaoChen/Documents/Github/OOP-II/Week04/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_24cf992ae4c507bb2745651ef38e217d9acdf0cc/classes.dex
