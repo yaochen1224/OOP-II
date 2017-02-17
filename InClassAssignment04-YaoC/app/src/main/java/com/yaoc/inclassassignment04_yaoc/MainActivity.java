@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -68,11 +68,32 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_SUBJECT,"Something Interesting You Must Try!");
             intent.putExtra(Intent.EXTRA_TEXT,"");
             if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
+                //startActivity(intent);
+                startActivityForResult(intent, 0);
             }
-        }else{
-
+        } else {
+            Intent detailIntent = new Intent(this, DetailActivity.class);
+            detailIntent.putExtra("name", userName);
+            detailIntent.putExtra("gender", gender);
+            detailIntent.putExtra("emotion", emotion);
+            startActivity(detailIntent);
         }
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.v("requestCode : ", "" + requestCode);
+        Log.v("resultCode : ", "" + resultCode);
+        //if (requestCode == 0) {
+            //if (resultCode == RESULT_OK) {
+        String userName = ((EditText)findViewById(R.id.userName)).getText().toString();
+                Intent detailIntent = new Intent(this, DetailActivity.class);
+                detailIntent.putExtra("name", userName);
+                detailIntent.putExtra("gender", gender);
+                detailIntent.putExtra("emotion", emotion);
+                startActivity(detailIntent);
+            //}
+        //}
     }
 
 
