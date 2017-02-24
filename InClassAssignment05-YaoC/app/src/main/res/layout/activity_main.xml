@@ -5,6 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context="com.yaoc.inclassassignment05_yaoc.MainActivity">
 
 
@@ -17,16 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Decide what to eat in just a few clicks"
+            android:text="Record what you ate"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="44dp"
-            android:background="#FF9100" />
 
     </LinearLayout>
 
@@ -41,6 +37,28 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What did you have?"/>
+
+            <EditText
+                android:id="@+id/what_you_ate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type in the restaurant, food, etc"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How much did you spent?"/>
+
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type in the number only"/>
+
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -49,111 +67,57 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:text="Purpose for dinning out?" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="date" />
+                    android:text="How was it?" />
 
                 <RadioButton
+                    android:id="@+id/deliciou"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="hang out with friends" />
+                    android:text="It was delicious!!!"
+                    android:onClick="emotionClicked"/>
 
                 <RadioButton
+                    android:id="@+id/notBad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="family time" />
+                    android:text="Not bad."
+                    android:onClick="emotionClicked"/>
 
                 <RadioButton
+                    android:id="@+id/bad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="business purpose" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="On the Hunt" />
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="budget" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$5~$10/person" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$10~$20/person" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$20~$30/person" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$30~$50/person" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="$50+/person" />
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Distance preference?" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="A little bit lazy" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Can go a little bit further" />
+                    android:text="Ewww, never will go there again."
+                    android:onClick="emotionClicked"/>
 
             </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Other Preferences"/>
+                android:text="Other Notes"/>
 
             <CheckBox
+                android:id="@+id/spicy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Spicy" />
+                android:text="Spicy"
+                android:onClick="onCheckboxClicked"
+                />
 
             <CheckBox
+                android:id="@+id/healthy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Healthy" />
+                android:text="Healthy"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
+                android:id="@+id/onDiet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="On a diet" />
+                android:text="On a diet"
+                android:onClick="onCheckboxClicked"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -163,11 +127,14 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:text="ADD"
+                    android:onClick="add"/>
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="DISPLAY"
+                    android:onClick="display"/>
 
             </LinearLayout>
 
