@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.onDiet)).setChecked(false);
 
         previousChoices.add(new Food(whatYouAte,price,emotion,wasSpicy,wasHealthy,wasOnDiet));
-        Toast.makeText(getApplicationContext(), "You have successfully added your choice!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "You have successfully added your choice!｀", Toast.LENGTH_SHORT).show();
     }
 
     public void display(View view){
